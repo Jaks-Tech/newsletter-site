@@ -1,0 +1,31 @@
+name: Generate RSS Feed
+
+on:
+  schedule:
+    # Runs every week on Sunday at 00:00 UTC. Adjust as needed.
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Generate RSS feed
+        run: node generate-rss.js
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/newsletter/rss.xml || true
+          # Only commit if there are changes
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update RSS feed"
+            git push
+          fi
