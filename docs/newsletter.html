@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter</title>
+  <!-- Link the external stylesheet for layout and colours -->
+  <link rel="stylesheet" href="newsletter.css">
+</head>
+<body>
+  <!-- Hero section with gradient background -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Our Newsletter</h1>
+      <p class="tagline">Stay up to date with the latest news and articles</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Latest issue will be injected here by newsletter.js -->
+    <section id="latest" class="section">
+      <h2>Latest Issue</h2>
+      <div id="latest-issue" class="issue"></div>
+    </section>
+
+    <!-- Archive list for previous issues -->
+    <section id="archive" class="section">
+      <h2>Archive</h2>
+      <ul id="archive-list" class="archive-list"></ul>
+    </section>
+
+    <!-- Subscribe section with link to the RSS feed -->
+    <section id="subscribe" class="section">
+      <h2>Subscribe</h2>
+      <p>You can subscribe via our RSS feed to receive updates as soon as we publish new issues.</p>
+      <a id="rss-link" href="newsletter/rss.xml" class="button">RSS Feed</a>
+    </section>
+  </main>
+
+  <!-- Client-side JavaScript that fetches newsletter entries from Sanity -->
+  <script src="newsletter.js"></script>
+</body>
+</html>
