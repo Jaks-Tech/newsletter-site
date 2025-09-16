@@ -1,8 +1,10 @@
 /**
- * Sanity schema definition for the Newsletter document type.
+ * Sanity schema definition for the Paceflow Newsletter.
  *
- * Copy this file into your Sanity studio under the `schemas/` directory
- * and import it into your schema index (e.g. `schema.js`).
+ * Save this file in your Sanity studio under `./schemas/` and import it
+ * into your schema index file (usually `schema.js` or `schema.ts`) so
+ * that Sanity knows about the newsletter document type. Once added, you
+ * can create and manage newsletter entries via the Sanity Studio UI.
  */
 
 export default {
