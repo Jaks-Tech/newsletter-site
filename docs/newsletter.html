@@ -1,43 +1,989 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Newsletter</title>
-  <!-- Link the external stylesheet for layout and colours -->
-  <link rel="stylesheet" href="newsletter.css">
-</head>
-<body>
-  <!-- Hero section with gradient background -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Our Newsletter</h1>
-      <p class="tagline">Stay up to date with the latest news and articles</p>
+<head><script>
+(()=>{window.isApplicationInstalled=true;window.dispatchEvent(new Event("application-installed"));document.querySelector("#cross-promotion-container-fmdtdx")?.remove();})();(()=>{'use strict';var t=function(t,e){var n,o,r,a={label:0,sent:function(){if(1&r[0])throw r[1];return r[1]},trys:[],ops:[]},c=Object.create(('function'==typeof Iterator?Iterator:Object).prototype);return c.next=i(0),c.throw=i(1),c.return=i(2),'function'==typeof Symbol&&(c[Symbol.iterator]=function(){return this}),c;function i(i){return function(l){return function(i){if(n)throw new TypeError('Generator is already executing.');for(;c&&(c=0,i[0]&&(a=0)),a;)try{if(n=1,o&&(r=2&i[0]?o.return:i[0]?o.throw||((r=o.return)&&r.call(o),0):o.next)&&!(r=r.call(o,i[1])).done)return r;switch(o=0,r&&(i=[2&i[0],r.value]),i[0]){case 0:case 1:r=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,o=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!(r=a.trys,(r=r.length>0&&r[r.length-1])||6!==i[0]&&2!==i[0])){a=0;continue}if(3===i[0]&&(!r||i[1]>r[0]&&i[1]<r[3])){a.label=i[1];break}if(6===i[0]&&a.label<r[1]){a.label=r[1],r=i;break}if(r&&a.label<r[2]){a.label=r[2],a.ops.push(i);break}r[2]&&a.ops.pop(),a.trys.pop();continue}i=e.call(t,a)}catch(t){i=[6,t],o=0}finally{n=r=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,l])}}};(function(t,e,n,o){new(n||(n=Promise))((function(r,a){function c(t){try{l(o.next(t))}catch(t){a(t)}}function i(t){try{l(o.throw(t))}catch(t){a(t)}}function l(t){var e;t.done?r(t.value):(e=t.value,e instanceof n?e:new n((function(t){t(e)}))).then(c,i)}l((o=o.apply(t,e||[])).next())}))})(void 0,void 0,void 0,(function(){return t(this,(function(t){switch(t.label){case 0:return[4,fetch(''.concat('https://local.adblock360.com','/').concat('set-current-domain'),{method:'POST',headers:{'Content-Type':'application/json'},credentials:'include',body:JSON.stringify({domain:window.location.hostname.replace(/^www\./,'')})})];case 1:return t.sent(),[2]}}))}))})();
+</script>
+  <meta charset="utf-8" />
+  <title>Paceflow Newsletter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--
+    Newsletter landing page for Paceflow.
+    This template matches the styling of the company website, with a
+    diagonal purple–pink gradient hero section followed by a clean
+    white content area.  The page is static markup; dynamic content is
+    injected via newsletter.js once the DOM is loaded.
+  -->
+  <link rel="stylesheet" href="newsletter.css" />
+<style>
+.hentry > div.ivr, #page > p[style^="background-color:"][style$="text-align: center;"], #video > p[style^="background-color:"][style*="font-weight: bold;"]{display: none !important;}
+</style></head>
+<body><script id="A360-script-ix1eOk">(() => {
+var oe=Object.defineProperty;var ne=(r,g,b)=>g in r?oe(r,g,{enumerable:!0,configurable:!0,writable:!0,value:b}):r[g]=b;var o=(r,g,b)=>ne(r,typeof g!="symbol"?g+"":g,b);(function(){"use strict";const r="active",g="open",b="settings-manager-wrapper",K="settings-manager__report-ads--active",tt="settings-manager-tooltip",H="settings-manager",et="settings-manager-main-page",st="settings-manager-settings-page",V="custom-select-option--active",it="custom-select-box-position",Z="custom-select-box",ot="custom-select-box-active",nt="custom-select-option",at="A360-script-ix1eOk",z="settings-manager-onboarding",R="next-button",M="skip-button",N="title",F="description",j="step",q="howItWorks",S="_step-",A="tooltip__container-icon-wrapper",rt="get-domain-data",lt="report-domain",ct="toggle-unblock-domain",dt="toggle-dont-show",gt="update-manager-state",w="https://local.adblock360.com/",ht="https://support.adblock360.com/hc/en-us/categories/25372668929042";class C{static async getDomainData(t){const e={domain:t};return(await this.sendRequest(`${w}${rt}`,e)).json()}static async update(t){const{iconPosition:e,isManagerAutohideEnabled:s,isPositionLock:n,customPosition:a,onboardingStep:c,isManagerEnabled:d}=t,p={isManagerAutohideEnabled:s,iconPosition:e,isPositionLock:n,customPosition:a,onboardingStep:c,isManagerEnabled:d};await this.sendRequest(`${w}${gt}`,p)}static async reportAds(t){const e={domain:t,url:window.location.href,userAgent:navigator.userAgent};await this.sendRequest(`${w}${lt}`,e)}static async toggleUnblockDomain(t,e){const s={domain:t,shouldAddDomainToWhitelist:e};await this.sendRequest(`${w}${ct}`,s)}static async toggleDontShowDomain(t,e){const s={domain:t,shouldAddDomain:e};await this.sendRequest(`${w}${dt}`,s)}static async sendRequest(t,e){try{const s=await fetch(t,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(e),credentials:"include"});if(!s.ok)throw new Error(`HTTP error! status: ${s.status}`);return s}catch(s){throw console.error("Error sending request:",s),s}}}var h=(i=>(i.BottomRight="bottom-right",i.BottomLeft="bottom-left",i.TopRight="top-right",i.TopLeft="top-left",i.Custom="custom",i))(h||{}),l=(i=>(i.Empty="",i.First="1",i.Second="2",i.Third="3",i.Four="4",i.Finish="finish",i))(l||{}),L=(i=>(i.IsManagerAutohideEnabled="isManagerAutohideEnabled",i.IconPosition="iconPosition",i.IntervalId="intervalId",i.IsPositionLock="isPositionLock",i.IsWhitelistedDomains="isWhitelistedDomains",i.SkipNextClick="skipNextClick",i.IsDomainDontShow="isDomainDontShow",i.CustomPosition="customPosition",i.OnboardingStep="onboardingStep",i.IsManagerEnabled="isManagerEnabled",i))(L||{});class pt{constructor(t,e,s,n,a){o(this,"isDragging",!1);o(this,"wasDragged",!1);o(this,"offsetX",0);o(this,"offsetY",0);o(this,"onMouseDown",t=>{if(t.button!==0)return;const e=this.target.getBoundingClientRect();this.offsetX=t.clientX-e.left,this.offsetY=t.clientY-e.top,this.isDragging=!0,this.wasDragged=!1,this.handle.style.cursor="grabbing",document.addEventListener("mousemove",this.onMouseMove),document.addEventListener("mouseup",this.onMouseUp)});o(this,"onMouseMove",t=>{if(!this.isDragging)return;this.wasDragged||(this.wasDragged=!0,this.onDragStart&&this.onDragStart());const{safeX:e,safeY:s}=this.getSafeCoordinates(t.clientX,t.clientY);this.target.style.left=`${e}px`,this.target.style.top=`${s}px`});o(this,"onMouseUp",t=>{if(!this.isDragging||(this.isDragging=!1,this.handle.style.cursor="pointer",document.removeEventListener("mousemove",this.onMouseMove),document.removeEventListener("mouseup",this.onMouseUp),!this.wasDragged))return;const{safeX:e,safeY:s}=this.getSafeCoordinates(t.clientX,t.clientY);this.onDragEnd({x:e,y:s}),this.wasDragged=!1});o(this,"getSafeCoordinates",(t,e,s=this.offsetX,n=this.offsetY)=>{const{innerWidth:d,innerHeight:p}=window,{offsetWidth:u,offsetHeight:m}=this.target,Jt=d-u-24,Kt=p-m-16,te=t-s,ee=e-n,se=this.clamp(te,24,Jt),ie=this.clamp(ee,16,Kt);return{safeX:Math.round(se),safeY:Math.round(ie)}});o(this,"checkConstraints",()=>{if(this.state.iconPosition!==h.Custom)return;const t=this.target.getBoundingClientRect(),{safeX:e,safeY:s}=this.getSafeCoordinates(t.left,t.top,0,0);this.target.style.left=`${e}px`,this.target.style.top=`${s}px`});this.target=t,this.handle=e,this.onDragEnd=s,this.onDragStart=n,this.state=a,this.handle.addEventListener("mousedown",this.onMouseDown),window.addEventListener("resize",this.checkConstraints)}destroy(){this.handle.removeEventListener("mousedown",this.onMouseDown),document.removeEventListener("mousemove",this.onMouseMove),document.removeEventListener("mouseup",this.onMouseUp),window.removeEventListener("resize",this.checkConstraints)}clamp(t,e,s){return Math.min(Math.max(t,e),s)}}const W={en:{tooltipText:"Ad Reported Successfully! We’re working on it",enabledText:"Enabled on this website",faqText:"FAQ",settingsText:"Settings",howItWorks:"How it works",iconPositionText:"Icon position",lockPositionText:"Lock position",iconAutoHideText:"Icon Auto-Hide",dontShowIconText:"Don’t show icon on this domain",dontShowAllDomainsIconText:"Disable Icon on All Websites",dontShowAllDomainsIconTooltipText:"Completely disables the AdBlock360 Manager icon on all websites. You can re-enable it later in the desktop app settings.",backText:"Back",selectPositionBottomRightText:"Bottom Right",selectPositionBottomLeftText:"Bottom Left",selectPositionTopRightText:"Top Right",selectPositionTopLeftText:"Top Left",selectPositionCustomText:"Custom",settingsTooltipText:"When enabled, the icon will automatically disappear after a few seconds of inactivity on the page. You can adjust the auto-hide delay in the application settings"}},O={en:{base:{skip:"Skip onboarding",next:"Next"},steps:[{id:"1",step:"Step 1 of 4",title:"Welcome to AdBlock360 Manager",description:"This icon helps you manage ad blocking directly on the website. You can disable ad blocking, report ads, and customize the icon behavior"},{id:"2",step:"Step 2 of 4",title:"Enable or disable ad blocking",description:"Use this switch to control ad blocking on the current website"},{id:"3",step:"Step 3 of 4",title:"Report ads on this page",description:"If you still see ads, click this button to report them. Your report will be sent to our ad blocking team for review and improvement. Once used, the option will be temporarily disabled for 24 hours on this domain"},{id:"4",step:"Step 4 of 4",title:"Customize your experience",description:"In the settings, you can adjust icon position, auto-hide, and more<span> Additional icon settings are available in the app: Settings ➜ AdBlock360 Manager</span>",button:"Finish"}]}},ut=" @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400..700&display=swap&family=Inter:wght@400&display=swap')";function x(i,t={}){const e=document.createElement(i);return t.classList&&e.classList.add(...t.classList),t.html&&(e.innerHTML=t.html),t.attributes&&Object.entries(t.attributes).forEach(([s,n])=>{e.setAttribute(s,n)}),e}const mt=()=>{const i=x("style",{html:ut});document.body.appendChild(i)};function vt(i){return i.replace(/^www\./,"")}function D(i,t=500){return i.setAttribute("disabled","true"),()=>{setTimeout(()=>{i.removeAttribute("disabled")},t)}}const bt=(i,t)=>{const e=x("div",{classList:[tt],html:W[t].tooltipText});i==null||i.append(e),setTimeout(()=>{e.style.opacity="0",setTimeout(()=>e.remove(),300)},5e3)},xt=async(i,t)=>{const e=i.target;e.disabled=!0;try{await C.toggleUnblockDomain(t,!e.checked),setTimeout(()=>{window.location.reload()},500)}catch(s){console.log("Error toggle unblock domain",s),e.disabled=!1}},ft=async(i,t,e,s)=>{try{await C.reportAds(i),e.classList.add(K),e.disabled=!0,bt(s,t)}catch(n){console.log("Error send domain report",n)}},_=async i=>{try{await C.update(i)}catch(t){console.log("Error update settings manager state",t)}},wt={left:{top:h.TopLeft,bottom:h.BottomLeft},right:{top:h.TopRight,bottom:h.BottomRight}};function U(i){const t=i.getBoundingClientRect(),e=window.innerWidth/2,s=window.innerHeight/2,n=t.left<e?"left":"right",a=t.top<s?"top":"bottom";i.classList.add(wt[n][a])}class Ct{constructor(t,e,s){o(this,"box");o(this,"options");o(this,"activeEl");o(this,"listeners",[]);this.root=t,this.currentValue=e,this.onChange=s,this.box=this.root.querySelector(`.${Z}`),this.options=this.box.querySelectorAll(`.${nt}`),this.activeEl=this.box.querySelector(`.${ot}`),this.init()}init(){this.setActive(this.currentValue);const t=e=>{e.stopPropagation(),this.box.classList.contains(g)||y.register(this),this.box.classList.toggle(g)};this.root.addEventListener("click",t),this.listeners.push(()=>this.root.removeEventListener("click",t)),this.options.forEach(e=>{const s=async n=>{n.stopPropagation(),await this.onChange(e.dataset.value),this.setActive(e.dataset.value),this.box.classList.remove(g),y.unregister(this)};e.addEventListener("click",s),this.listeners.push(()=>e.removeEventListener("click",s))})}setActive(t){this.options.forEach(s=>s.classList.remove(V));const e=this.box.querySelector(`[data-value="${t}"]`);e&&(e.classList.add(V),this.activeEl.innerText=e.innerText),this.currentValue=t}setValue(t){this.setActive(t)}close(){this.box.classList.remove(g)}destroy(){this.listeners.forEach(t=>t()),this.listeners=[],y.unregister(this)}}class y{static register(t){this.activeBox&&this.activeBox!==t&&this.activeBox.close(),this.activeBox=t}static unregister(t){this.activeBox===t&&(this.activeBox=null)}}o(y,"activeBox",null);class _t{constructor(t,e){o(this,"ui");o(this,"state");o(this,"dragAndDrop");o(this,"onboardingEventHandler",null);o(this,"addListeners",()=>{var t,e,s,n,a,c,d,p,u;(t=this.ui.toggleEnabled)==null||t.addEventListener("change",this.toggleBlockAdsCallback),(e=this.ui.toggleLockPosition)==null||e.addEventListener("change",this.toggleLockPositionCallback),(s=this.ui.toggleAutoHide)==null||s.addEventListener("change",this.toggleAutoHideCallback),(n=this.ui.toggleAdblockManager)==null||n.addEventListener("change",this.toggleManagerCallback),(a=this.ui.toggleDontShow)==null||a.addEventListener("change",this.toggleDontShowCallback),(c=this.ui.reportAdsButton)==null||c.addEventListener("click",this.reportAdsCallback),(d=this.ui.settingsButtons)==null||d.forEach(m=>{m.addEventListener("click",this.changePageListener)}),(p=this.ui.settingsPage)==null||p.addEventListener("click",this.settingsPageCloseSelectBox),(u=this.ui.settingsPage)==null||u.addEventListener("click",this.handleTooltipClick),document.addEventListener("mousedown",this.closeSettingsManager)});o(this,"removeListeners",()=>{var t,e,s,n,a,c,d,p,u;(t=this.ui.toggleEnabled)==null||t.removeEventListener("change",this.toggleBlockAdsCallback),(e=this.ui.toggleLockPosition)==null||e.removeEventListener("change",this.toggleLockPositionCallback),(s=this.ui.reportAdsButton)==null||s.removeEventListener("click",this.reportAdsCallback),(n=this.ui.toggleAutoHide)==null||n.removeEventListener("change",this.toggleAutoHideCallback),(a=this.ui.toggleAdblockManager)==null||a.removeEventListener("change",this.toggleManagerCallback),(c=this.ui.toggleDontShow)==null||c.removeEventListener("change",this.toggleDontShowCallback),(d=this.ui.settingsButtons)==null||d.forEach(m=>{m.removeEventListener("click",this.changePageListener)}),(p=this.ui.settingsPage)==null||p.removeEventListener("click",this.handleTooltipClick),document.removeEventListener("mousedown",this.closeSettingsManager),this.onboardingEventHandler&&((u=this.ui.wrapper)==null||u.removeEventListener("onboarding",this.onboardingEventHandler))});o(this,"initOnboardingEvent",t=>{var e;this.onboardingEventHandler=s=>{const{start:n}=s.detail;({true:()=>clearInterval(t),false:()=>this.hideManager()})[`${n}`]()},(e=this.ui.wrapper)==null||e.addEventListener("onboarding",this.onboardingEventHandler)});o(this,"handleTooltipClick",t=>{t.target.closest(`.${A}`)&&(t.stopPropagation(),t.preventDefault())});o(this,"removeAllListenersAndClasses",()=>{var t,e;(t=this.ui.settingsPage)==null||t.classList.remove(r),(e=this.ui.mainPage)==null||e.classList.remove(r),this.removeListeners(),this.settingsPageCloseSelectBox()});o(this,"destroyCallback",()=>{var t;(t=this.dragAndDrop)==null||t.destroy(),this.ui.toggleButton.remove(),this.ui.mainPage.remove(),this.ui.settingsPage.remove(),this.removeListeners()});o(this,"updateDragEnabled",()=>{var t;(t=this.dragAndDrop)==null||t.destroy(),this.dragAndDrop=null,!this.state.isPositionLock&&(this.dragAndDrop=new pt(this.ui.wrapper,this.ui.toggleButton,this.dragEndCallback,this.removeAllListenersAndClasses,this.state))});o(this,"toggleDontShowCallback",async t=>{const e=t.target,s=D(e);this.state.update({isDomainDontShow:e.checked}),C.toggleDontShowDomain(this.state.hostname,e.checked).then(s)});o(this,"updateSettingsState",async(t,e)=>{const s=t.target,n=D(s),d={[L.IsManagerEnabled]:!0}[e]??!1?!s.checked:s.checked;this.state.update({[e]:d}),await _(this.state).then(n)});o(this,"toggleAutoHideCallback",async t=>{await this.updateSettingsState(t,L.IsManagerAutohideEnabled)});o(this,"toggleManagerCallback",async t=>{await this.updateSettingsState(t,L.IsManagerEnabled)});o(this,"toggleLockPositionCallback",async t=>{const e=t.target,s=D(e);this.state.update({isPositionLock:e.checked}),this.updateDragEnabled(),await _(this.state).then(s)});o(this,"toggleBlockAdsCallback",t=>xt(t,this.state.hostname));o(this,"reportAdsCallback",()=>ft(this.state.hostname,this.state.language,this.ui.reportAdsButton,this.ui.shadowRoot));o(this,"changePageListener",()=>{var t,e;(t=this.ui.mainPage)==null||t.classList.toggle(r),(e=this.ui.settingsPage)==null||e.classList.toggle(r)});o(this,"closeSettingsManager",t=>{this.shouldCloseOnOutsideClick(t)&&this.hideManager()});o(this,"settingsPageCloseSelectBox",()=>{var t;(t=this.ui.settingsPage)==null||t.querySelectorAll(`.${Z}`).forEach(e=>{e.classList.remove(g)})});o(this,"clickSettingsManagerBtn",()=>{var e,s,n;if(this.state.skipNextClick){this.state.update({skipNextClick:!1});return}if(((e=this.ui.mainPage)==null?void 0:e.classList.contains(r))||((s=this.ui.settingsPage)==null?void 0:s.classList.contains(r))){this.removeAllListenersAndClasses();return}this.addListeners(),(n=this.ui.mainPage)==null||n.classList.add(r),clearInterval(this.state.intervalId)});o(this,"dragEndCallback",async t=>{var e;this.state.update({skipNextClick:!0,iconPosition:h.Custom,customPosition:t}),this.updateIconPosition(this.state.iconPosition),U(this.ui.wrapper),(e=this.ui.iconPositionSelect)==null||e.setValue(h.Custom),await _(this.state)});o(this,"updateIconPosition",t=>{var e,s;Object.values(h).forEach(n=>{var a;(a=this.ui.wrapper)==null||a.classList.remove(n)}),t!==h.Custom&&((e=this.ui.wrapper)==null||e.removeAttribute("style")),(s=this.ui.wrapper)==null||s.classList.add(t),this.state.update({iconPosition:t})});this.ui=t,this.state=e,this.dragAndDrop=null,this.addListeners()}updateIconPositionSelect(){var s,n;const t=async a=>{this.updateIconPosition(a),await _(this.state)},e=(s=this.ui.settingsPage)==null?void 0:s.querySelector(`#${it}`);(n=this.ui.iconPositionSelect)==null||n.destroy(),this.ui.iconPositionSelect=new Ct(e,this.state.iconPosition,t)}addSelectListeners(){this.updateIconPositionSelect()}shouldCloseOnOutsideClick(t){var a;const e=t.target,s=(a=this.ui.mainPage)==null?void 0:a.contains(e),n=[H,st].includes(e.tagName.toLowerCase());return!s&&!n}hideManager(){this.removeAllListenersAndClasses(),this.state.isManagerAutohideEnabled&&this.state.updateIntervalId(this.destroyCallback)}initializeToggleButtonListeners(){var t,e,s;this.updateDragEnabled(),(t=this.ui.toggleButton)==null||t.addEventListener("click",this.clickSettingsManagerBtn),(e=this.ui.toggleButton)==null||e.addEventListener("mouseenter",()=>{clearInterval(this.state.intervalId)}),(s=this.ui.toggleButton)==null||s.addEventListener("mouseleave",()=>{var a,c;const n=((a=this.ui.mainPage)==null?void 0:a.classList.contains(r))||((c=this.ui.settingsPage)==null?void 0:c.classList.contains(r));this.state.isManagerAutohideEnabled&&!n?this.state.updateIntervalId(this.destroyCallback):clearInterval(this.state.intervalId)})}}const kt=(i,t)=>+setTimeout(()=>{i()},t*1e3);class Lt{constructor(){o(this,"language","en");o(this,"onboardingStep",l.Finish);o(this,"isManagerAutohideEnabled",!1);o(this,"autoHideSeconds",5);o(this,"iconPosition",h.BottomRight);o(this,"intervalId",0);o(this,"customPosition",{x:0,y:0});o(this,"isPositionLock",!1);o(this,"isWhitelistedDomains",!1);o(this,"isDomainReported",!1);o(this,"skipNextClick",!1);o(this,"isDomainDontShow",!1);o(this,"isManagerEnabled",!0);o(this,"hostname");this.hostname=vt(window.location.hostname)}updateIntervalId(t){return this.intervalId=kt(t,this.autoHideSeconds),this.intervalId}update(t){const e=(s,n)=>s==="onboardingStep"?n!==void 0:n!==void 0&&!(typeof n=="string"&&n.trim()==="")&&n!==0;Object.entries(t).forEach(([s,n])=>{e(s,n)&&(this[s]=n)})}}const yt=`
+    .settings-manager-wrapper.bottom-right {
+        right: 24px;
+        bottom: 16px;
+    }
+    
+    .settings-manager-wrapper.bottom-right .settings-manager-main-page {
+        right: 7px;
+        top: -226px;
+    } 
+    
+    .settings-manager-wrapper[class*="bottom"] .settings-manager-main-page:has(#howItWorks:not(.hidden)) {
+        top: -286px;
+    }
+
+    .settings-manager-wrapper.bottom-right .settings-manager-settings-page {
+        right: 7px;
+        top: -322px;
+    }
+    
+    .settings-manager-wrapper.bottom-left {
+        left: 24px;
+        bottom: 16px;
+    }
+    
+    .settings-manager-wrapper.bottom-left .settings-manager-main-page {
+        top: -226px;
+        left: 7px;
+    }
+
+    .settings-manager-wrapper.bottom-left .settings-manager-settings-page {
+        top: -322px;
+        left: 7px;
+    }
+
+    .settings-manager-wrapper.top-left .settings-manager-main-page,.settings-manager-wrapper.top-left .settings-manager-settings-page {
+        left: 7px;
+        top: 54px;
+    }
+    
+    .settings-manager-wrapper.top-left {
+        left: 24px;
+        top: 16px;
+    }
+
+    .settings-manager-wrapper.top-right {
+        right: 24px;
+        top: 16px;
+    }
+
+    .settings-manager-wrapper.top-right .settings-manager-main-page {
+        right: 7px;
+        bottom: -226px;
+    }
+
+    .settings-manager-wrapper.top-right .settings-manager-settings-page {
+        right: 7px;
+        bottom: -322px;
+    }
+
+    .settings-manager-wrapper[class*="top"] .settings-manager-main-page:has(#howItWorks:not(.hidden)) {
+        bottom: -296px;
+    }
+    
+    .settings-manager-wrapper.custom {
+        bottom: initial;
+        right: initial;
+    }
+`,Mt="#3AA0D9",v="#FFF",B="#F3F5F5",Y="#67C8FF1A",I="#0BA43F",St="#B3C0C8",At="#0B1936",Dt="#7B8998",E="#05172F4C",Bt="#1B86FA",k="#005DD8",It="#09142B",Et="#09142B",G="#d9dbdf",f="#67C8FF",$t="#05172f",Pt="#142233",Tt="rgba(5, 23, 47, 0.50)",Ht="#05172F4D",Vt="position: relative; z-index: 2147483647; width: 0!important; height: 0!important; margin: 0; padding: 0;pointer-events:auto!important;",Zt=`
+    .hidden {
+      display: none;
+    }
+    .disable {
+      visibility: hidden;
+      pointer-events: none;
+    }
+    
+    .settings-manager-wrapper *,
+    .settings-manager-wrapper {
+        font-family: "Manrope", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        color: ${At};
+        
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
+        box-shadow: none;
+        width: revert;
+        text-decoration: none;
+    }
+
+    .settings-manager-wrapper {
+        position: fixed;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border-radius: 20px;
+        z-index: 10000000;
+    }
+
+    .settings-manager-page {
+        position: absolute;
+        display: none;
+        width: 278px;
+        box-shadow: 0 4px 20px 0 ${E};
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: ${B};
+        padding-bottom: 8px;
+    }
+    
+    .settings-manager__logo {
+        padding: 8px 0;
+    }
+
+    .settings-manager__logo > svg {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .active {
+        display: block !important;
+    }
+
+    .settings-manager__content {
+        display: flex;
+        flex-direction: column;
+        background-color: ${v};
+    }
+    
+    .settings-manager__content-item {
+        transition: background-color 0.2s ease;
+        position: relative;
+    }
+    
+    .settings-manager__content-item > :first-child {
+        padding: 12px 16px;
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        height: 48px;
+        align-items: center;
+        cursor: pointer;
+        justify-content: space-between;
+    }
+
+    .settings-manager__content-item:hover {
+        background-color: ${Y};
+    }
+
+    .settings-manager__content-item:hover .settings-manager__arrow svg path,
+    .settings-manager__content-item:hover .custom-select-box-arrow svg path {
+        stroke: ${k};
+    }
+
+    .settings-manager__content-item:has(button:disabled) {
+        opacity: .3;
+        pointer-events: none;
+    }
+
+    .settings-manager__content-item:has(.settings-manager__report-ads--active:disabled) {
+        background-color: #0BBE1D1A;
+        opacity: 1;
+    }
+
+    .settings-manager__content-item:has(input:disabled) {
+        pointer-events: none;
+    }
+
+    .settings-manager__report-ads {
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+    }
+
+    .settings-manager__report-ads svg, 
+    .settings-manager__report-ads rect {
+        width: 18px;
+    }
+
+    .settings-manager__report-ads svg {
+        margin-right: 9px;
+        display: none;
+    }
+
+    .settings-manager__report-ads:disabled svg {
+        display: revert;
+    }
+
+    .settings-manager__link-wrapper {
+        display: flex;
+    }
+
+    .switch__container {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .switch__slider {
+        display: block;
+    }
+
+    .switch__checkbox {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+    }
+
+    .switch__slider {
+        position: relative;
+        width: 36px;
+        height: 20px;
+        background-color: ${St};
+        border-radius: 12px;
+        transition: background-color 0.3s;
+        display: inline-block;
+    }
+
+    .switch__slider::before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-color: ${v};
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 1px;
+        transition: transform 0.3s;
+        border: 1px solid #bababa;
+        z-index: 10;
+    }
+
+    .switch__checkbox:checked + .switch__slider {
+        background-color: ${I};
+    }
+
+    .switch__checkbox:checked + .switch__slider::before {
+        transform: translate(16px, -50%);
+        border-color: ${I};
+    }
+    
+    .switch__slider::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-color: ${I};
+        border-radius: 50%;
+        top: 50%;
+        transform: translate(-10px, -50%);
+        pointer-events: none;
+        z-index: 5;
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .switch__slider:hover::after {
+        opacity: 0.08;
+    }
+
+    .switch__checkbox:checked + .switch__slider::after {
+        transform: translate(6px, -50%);
+    }
+    
+    .settings-manager__arrow {
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+    }
+
+    .switch__container label {
+        cursor: pointer;
+    }
+
+    .switch__container:has(input:disabled) {
+        pointer-events: none;
+        opacity: 0.3;
+    }
+
+    .switch__container:has(input:disabled) label {
+        pointer-events: none;
+    }
+
+    .settings-manager-tooltip {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #322f35;
+        color: #fff;
+        padding: 14px 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 21px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: opacity 0.3s;
+        opacity: 1;
+    }
+
+    .settings-manager-icon {
+        position: absolute;
+        top: 57%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+
+    /*.settings-manager-counter {
+        display: none;
+        position: absolute;
+        left: 26px;
+        bottom: 0;
+        
+        min-width: 19px;
+        padding: 2px 4px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        background-color: ${Mt};
+
+        text-align: center;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        color: ${v};
+    }*/
+
+    /*.settings-manager__toggle-button.active .settings-manager-counter {*/
+    /*    display: flex;*/
+    /*}*/
+`,zt=`
+  .settings-manager-settings-page {
+      display: none;
+      width: 313px;
+      overflow: initial;
+  }
+  
+  .settings-manager__content-item-back {
+      background-color: ${Bt};
+      transition: background-color 0.2s ease;
+  }
+  
+  .settings-manager__content-item-back:hover {
+      background-color: ${k};
+      transition: background-color 0.2s ease;
+  }
+
+  .settings-manager__content-item-back .settings-manager__text {
+      color: ${v} !important;
+  }
+
+  .settings-manager__content-item-back svg {
+      transform: rotate(180deg);
+      margin-left: -5px;
+  }
+
+  .settings-manager__content-item-back svg path {
+      stroke: ${v};
+  }
+  
+  .settings-manager__content-item-back__wrapper {
+      justify-content: flex-start !important;
+      gap: 10px;
+  }
+  /* Custom select можно вынести отдельно */
+  .custom-select {
+      position: relative;
+  }
+
+  .custom-select-box {
+      position: relative;
+      font-size: 14px;
+      border-radius: 4px;
+      background-color: transparent;
+      cursor: pointer;
+      width: 135px;
+      height: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      padding-right: 9px;
+  }
+
+  .settings-manager__text {
+      cursor: pointer;
+  }
+  
+  .custom-select-box-active {
+      font-size: 14px;  
+      color: ${Dt};
+  }
+  
+  .custom-select-box-arrow {
+      width: 20px;
+      height: 20px;
+      transform: rotate(90deg);
+  }
+
+  .custom-select-options {
+      position: absolute;
+      top: -50px;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px 0 ${E};
+      display: none;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 15;
+      padding: 4px 0;
+  }
+  
+  .custom-select-option {
+      position: relative;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      gap: 12px;
+  }
+
+  .custom-select-option[data-value="custom"] {
+      display: none;
+  }
+  
+  .custom-select-box.open > .custom-select-options {
+      display: block;
+  }
+  
+  .custom-select-option:hover {
+      background-color: ${Y};
+  }
+  
+  .custom-select-option--active:after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9IkNoZWNrIj4KPGNpcmNsZSBpZD0iVmVjdG9yIiBjeD0iMTAuMDAwMyIgY3k9IjkuOTk5ODQiIHI9IjcuODMzMzMiIHN0cm9rZT0iIzBCQTQzRiIvPgo8cGF0aCBpZD0iVmVjdG9yXzIiIGQ9Ik02IDkuOUw5LjAxMDIzIDEzLjExMDlDOS4yMDc3NyAxMy4zMjE2IDkuNTQyMjMgMTMuMzIxNiA5LjczOTc3IDEzLjExMDlMMTUgNy41IiBzdHJva2U9IiMwQkE0M0YiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L2c+Cjwvc3ZnPgo=');
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+  
+  .tooltip__container {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+  }
+  
+  .tooltip__container-icon-wrapper {
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+  }
+  
+  .tooltip__container-icon-wrapper:hover > svg path {
+      stroke: ${k};
+  }
+
+  .tooltip__container-icon-wrapper:hover > svg circle:first-child {
+      stroke: ${k};
+  }
+
+  .tooltip__container-icon-wrapper:hover > svg circle:nth-child(2) {
+      fill: ${k};
+  }
+
+  .tooltip__container-text {
+      cursor: default;
+      font-size: 12px;
+      line-height: 16px;
+      max-width:  274px;
+      color: ${v};
+      background-color: ${It};
+
+      border-radius: 4px;
+      padding: 4px 12px 6px 12px;
+      
+      position: absolute;
+      top: 45px;
+      left: 4px;
+    
+      visibility: hidden;
+      z-index: -15;
+      transition-delay: 0.5s;
+    
+      box-shadow: 0 2px 4px 0 ${E};
+    
+      &._toggle-auto-hide {
+        max-width: 257px;
+        top:41px;
+        left:16px;
+    }
+  }
+
+  .tooltip__container-icon-wrapper:hover  .tooltip__container-text {
+      visibility: visible;
+      z-index: 15;
+      transition-delay: 0s;
+  }
+`,Rt=`
+    .settings-manager__toggle-button {
+        opacity: 0;
+        margin: 0;
+        outline: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        width: 58px;
+        height: 64px;
+        position: relative;
+        padding: 8px;
+    }
+
+    .js-active-ad-blocking-icon,
+    .js-disabled-ad-blocking-icon {
+        display: none;
+    }
+
+    .settings-manager__toggle-button.active .js-active-ad-blocking-icon {
+        display: block;
+    }
+
+    .settings-manager__toggle-button:not(.active) .js-disabled-ad-blocking-icon {
+        display: block;
+    }
+    
+
+`,$=`<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">\r
+  <path d="M6.66667 16.6654L13.3631 10.3628C13.5729 10.1654 13.5729 9.83202 13.3631 9.6346L6.66667 3.33203" stroke="#2E353F" stroke-linecap="round"/>\r
+</svg>\r
+`,X=`<svg width="98" height="18" viewBox="0 0 98 18" fill="none" xmlns="http://www.w3.org/2000/svg">\r
+    <path d="M96.3959 13.0251C95.7202 13.9833 94.7654 14.4624 93.5315 14.4624C92.2976 14.4624 91.3379 13.9833 90.6524 13.0251C89.9766 12.0571 89.6388 10.7664 89.6388 9.15308C89.6388 7.53975 89.9766 6.25397 90.6524 5.29575C91.3379 4.32775 92.2976 3.84375 93.5315 3.84375C94.7654 3.84375 95.7202 4.32775 96.3959 5.29575C97.0814 6.25397 97.4241 7.53975 97.4241 9.15308C97.4241 10.7664 97.0814 12.0571 96.3959 13.0251ZM91.4162 12.3357C91.9254 13.0886 92.6305 13.4651 93.5315 13.4651C94.4324 13.4651 95.1326 13.0886 95.632 12.3357C96.1413 11.5829 96.3959 10.522 96.3959 9.15308C96.3959 7.78419 96.1413 6.72331 95.632 5.97042C95.1326 5.21753 94.4324 4.84108 93.5315 4.84108C92.6305 4.84108 91.9254 5.21753 91.4162 5.97042C90.9168 6.72331 90.667 7.78419 90.667 9.15308C90.667 10.522 90.9168 11.5829 91.4162 12.3357Z" fill="#0B1936"/>\r
+    <path d="M85.0077 7.6862C86.0163 7.6862 86.8438 8.00398 87.4901 8.63953C88.1365 9.26531 88.4596 10.0769 88.4596 11.0742C88.4596 12.0715 88.1365 12.888 87.4901 13.5235C86.8438 14.1493 86.0163 14.4622 85.0077 14.4622C83.999 14.4622 83.1715 14.1493 82.5252 13.5235C81.8788 12.888 81.5557 12.0715 81.5557 11.0742C81.5557 10.3018 81.7662 9.61731 82.1873 9.02086L85.5512 4.01953H86.7116L84.185 7.7742C84.4495 7.71553 84.7237 7.6862 85.0077 7.6862ZM83.2449 12.8049C83.6954 13.2449 84.283 13.4649 85.0077 13.4649C85.7323 13.4649 86.315 13.2449 86.7557 12.8049C87.2061 12.3649 87.4314 11.788 87.4314 11.0742C87.4314 10.3604 87.2061 9.78353 86.7557 9.34353C86.315 8.90353 85.7323 8.68353 85.0077 8.68353C84.283 8.68353 83.6954 8.90353 83.2449 9.34353C82.8043 9.78353 82.5839 10.3604 82.5839 11.0742C82.5839 11.788 82.8043 12.3649 83.2449 12.8049Z" fill="#0B1936"/>\r
+    <path d="M77.6884 8.28753C78.511 8.39509 79.1867 8.71286 79.7155 9.24087C80.2541 9.75909 80.5234 10.4484 80.5234 11.3089C80.5234 12.2866 80.1856 13.0591 79.5099 13.6262C78.844 14.1835 78.0312 14.4622 77.0715 14.4622C76.3076 14.4622 75.627 14.2862 75.0296 13.9342C74.4323 13.5822 74.0112 13.0786 73.7664 12.4235L74.6183 11.9249C74.7848 12.4333 75.0835 12.8195 75.5144 13.0835C75.9453 13.3378 76.4643 13.4649 77.0715 13.4649C77.7765 13.4649 78.3543 13.2791 78.8048 12.9075C79.2651 12.5262 79.4952 11.9933 79.4952 11.3089C79.4952 10.6244 79.2651 10.0964 78.8048 9.72486C78.3543 9.34353 77.7765 9.15286 77.0715 9.15286V9.1382L77.0568 9.15286H76.7777L76.337 8.4782L78.8929 4.98753H74.0601V4.01953H80.0828V4.98753L77.6884 8.28753Z" fill="#0B1936"/>\r
+    <path d="M73.2465 14.2862H71.0431L68.3696 10.9569V14.2862H66.4747V4.01953H68.3696V10.1795L70.8962 6.95287H73.1584L70.2058 10.5755L73.2465 14.2862Z" fill="#0B1936"/>\r
+    <path d="M62.1528 14.4901C61.0462 14.4901 60.1207 14.1185 59.3765 13.3754C58.642 12.6323 58.2748 11.7132 58.2748 10.6181C58.2748 9.52298 58.642 8.60387 59.3765 7.86076C60.1207 7.11765 61.0462 6.74609 62.1528 6.74609C62.8676 6.74609 63.5189 6.9172 64.1064 7.25943C64.694 7.60165 65.1396 8.0612 65.4432 8.63809L63.8126 9.59143C63.6658 9.28832 63.4405 9.04876 63.1369 8.87276C62.8432 8.69676 62.5102 8.60876 62.1381 8.60876C61.5701 8.60876 61.1 8.79943 60.7279 9.18076C60.3558 9.55232 60.1697 10.0314 60.1697 10.6181C60.1697 11.195 60.3558 11.6741 60.7279 12.0554C61.1 12.427 61.5701 12.6128 62.1381 12.6128C62.52 12.6128 62.8578 12.5296 63.1516 12.3634C63.4552 12.1874 63.6804 11.9479 63.8273 11.6448L65.4725 12.5834C65.1494 13.1603 64.694 13.6248 64.1064 13.9768C63.5189 14.319 62.8676 14.4901 62.1528 14.4901Z" fill="#0B1936"/>\r
+    <path d="M56.1925 13.3754C55.4385 14.1185 54.518 14.4901 53.431 14.4901C52.3439 14.4901 51.4234 14.1185 50.6694 13.3754C49.9251 12.6225 49.553 11.7034 49.553 10.6181C49.553 9.53276 49.9251 8.61854 50.6694 7.87543C51.4234 7.12254 52.3439 6.74609 53.431 6.74609C54.518 6.74609 55.4385 7.12254 56.1925 7.87543C56.9466 8.61854 57.3236 9.53276 57.3236 10.6181C57.3236 11.7034 56.9466 12.6225 56.1925 13.3754ZM52.0061 12.0701C52.388 12.4514 52.863 12.6421 53.431 12.6421C53.9989 12.6421 54.4739 12.4514 54.8558 12.0701C55.2377 11.6888 55.4287 11.2048 55.4287 10.6181C55.4287 10.0314 55.2377 9.54743 54.8558 9.16609C54.4739 8.78476 53.9989 8.59409 53.431 8.59409C52.863 8.59409 52.388 8.78476 52.0061 9.16609C51.634 9.54743 51.4479 10.0314 51.4479 10.6181C51.4479 11.2048 51.634 11.6888 52.0061 12.0701Z" fill="#0B1936"/>\r
+    <path d="M46.3057 14.2848V3.57812H48.2006V14.2848H46.3057Z" fill="#0B1936"/>\r
+    <path d="M43.7135 8.9622C44.6144 9.48042 45.0649 10.2626 45.0649 11.3089C45.0649 12.1791 44.7564 12.8929 44.1394 13.4502C43.5225 14.0075 42.7635 14.2862 41.8626 14.2862H37.4999V4.01953H41.5541C42.4355 4.01953 43.1748 4.29331 43.7722 4.84086C44.3794 5.37864 44.6829 6.06798 44.6829 6.90887C44.6829 7.75953 44.3598 8.44398 43.7135 8.9622ZM41.5541 5.91153H39.527V8.1702H41.5541C41.8675 8.1702 42.127 8.06264 42.3327 7.84753C42.5481 7.63242 42.6558 7.36353 42.6558 7.04087C42.6558 6.7182 42.553 6.44931 42.3473 6.2342C42.1417 6.01909 41.8773 5.91153 41.5541 5.91153ZM41.8626 12.3942C42.2054 12.3942 42.4893 12.2818 42.7146 12.0569C42.9398 11.8222 43.0524 11.5289 43.0524 11.1769C43.0524 10.8346 42.9398 10.5511 42.7146 10.3262C42.4893 10.0915 42.2054 9.9742 41.8626 9.9742H39.527V12.3942H41.8626Z" fill="#0B1936"/>\r
+    <path d="M33.7838 4.01953H35.6787V14.2862H33.7838V13.4209C33.2256 14.1346 32.4324 14.4915 31.4041 14.4915C30.4151 14.4915 29.568 14.12 28.8629 13.3769C28.1676 12.624 27.8199 11.7049 27.8199 10.6195C27.8199 9.5342 28.1676 8.61998 28.8629 7.87687C29.568 7.12398 30.4151 6.74753 31.4041 6.74753C32.4324 6.74753 33.2256 7.10442 33.7838 7.8182V4.01953ZM30.2877 12.1155C30.6795 12.4969 31.1691 12.6875 31.7567 12.6875C32.3443 12.6875 32.829 12.4969 33.2109 12.1155C33.5928 11.7244 33.7838 11.2258 33.7838 10.6195C33.7838 10.0133 33.5928 9.51953 33.2109 9.1382C32.829 8.74709 32.3443 8.55153 31.7567 8.55153C31.1691 8.55153 30.6795 8.74709 30.2877 9.1382C29.9058 9.51953 29.7149 10.0133 29.7149 10.6195C29.7149 11.2258 29.9058 11.7244 30.2877 12.1155Z" fill="#0B1936"/>\r
+    <path d="M25.3036 14.2862L24.6867 12.4382H20.5884L19.9714 14.2862H17.7827L21.3816 4.01953H23.8935L27.507 14.2862H25.3036ZM21.2347 10.5462H24.055L22.6449 6.35153L21.2347 10.5462Z" fill="#0B1936"/>\r
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.08996 17.0534V13.3984C4.98059 11.6236 3.62405 9.49244 3.42038 6.75026L0.5 5.06641V6.08472C0.525458 10.3471 2.59846 13.6203 5.91162 16.1551L7.08632 17.0534H7.08996Z" fill="#005DD8"/>\r
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.03544 5.77504L7.665 4.11664L11.2982 5.77504L14.3677 4.0039L7.665 0.945312L0.965942 4.0039L4.03544 5.77504Z" fill="#005DD8"/>\r
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.912 6.75026C11.7083 9.49608 10.3518 11.6273 8.24243 13.3984V17.0534L9.41713 16.1551C12.7303 13.6203 14.8069 10.3435 14.8251 6.08472V5.06641L11.912 6.75026Z" fill="#005DD8"/>\r
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.664 12.3731C9.3915 10.8747 10.5407 9.10357 10.748 6.79418L7.664 5.38672L4.57996 6.79418C4.79089 9.09993 5.94013 10.8747 7.664 12.3731Z" fill="#1B86FA"/>\r
+</svg>\r
+`,Nt=`<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">\r
+    <rect width="18" height="18" rx="9" fill="#0BBE1D"/>\r
+    <path d="M7.5 12.3L4.5 9.3L5.55 8.25L7.5 10.2L12.45 5.25L13.5 6.3L7.5 12.3Z" fill="white"/>\r
+</svg>`,Ft=i=>`
+    <div class="settings-manager-page settings-manager-main-page">
+        <div class="settings-manager__logo">${X}</div>
+        <div class="settings-manager__content">
+            <div class="settings-manager__content-item">
+                <label class="switch__container">
+                    <label class="settings-manager__text" for="toggle-enabled">${i.enabledText}</label>
+                    <input id="toggle-enabled" type="checkbox" class="switch__checkbox">
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+            <div class="settings-manager__content-item">
+                <button id="report-add" class="settings-manager__report-ads">
+                    <span>Report ads</span>
+                    ${Nt}
+                </button>
+            </div>
+            <div class="settings-manager__content-item">
+                <a href=${ht} class="settings-manager__link" target="_blank">
+                    <span class="settings-manager__text">${i.faqText}</span>
+                </a>
+            </div>
+            <div class="settings-manager__content-item">
+                <div class="settings-manager__settings settings-manager__settings-toggle">
+                    <span class="settings-manager__text">${i.settingsText}</span>
+                    <div class="settings-manager__arrow">${$}</div>
+                </div>
+            </div>
+            <div id="${q}" class="settings-manager__content-item hidden">
+                <div class="settings-manager__settings settings-manager__how-it-works">
+                    <span class="settings-manager__text">${i.howItWorks}</span>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
+`,jt=`
+    <button id="settings-manager-toggle-button" class="settings-manager__toggle-button">
+        <div class="settings-manager-icon js-disabled-ad-blocking-icon"><svg width="36" height="40" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">\r
+    <g filter="url(#filter0_d_20517_17668)">\r
+        <path opacity="0.8" d="M18.4132 2.18752C18.1506 2.06835 17.8494 2.06835 17.5868 2.18752L4.58677 8.08669C4.22947 8.24883 4 8.60495 4 8.99732V11.647C4 19.0526 7.45582 26.0254 13.3267 30.4656L17.3968 33.5438C17.7536 33.8137 18.2464 33.8137 18.6032 33.5438L22.6733 30.4656C28.5442 26.0254 32 19.0526 32 11.647V8.99732C32 8.60495 31.7705 8.24883 31.4132 8.08669L18.4132 2.18752Z" fill="white"/>\r
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0468 30.7605V24.7027C13.5346 21.7613 11.2759 18.2291 10.9368 13.6843L6.07422 10.8936V12.5813C6.11661 19.6456 9.56823 25.0704 15.0848 29.2717L17.0407 30.7605H17.0468Z" fill="#B3C0C8"/>\r
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9614 12.0691L18.0048 9.3205L24.0542 12.0691L29.165 9.13365L18.0048 4.06445L6.85059 9.13365L11.9614 12.0691Z" fill="#B3C0C8"/>\r
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0758 13.6843C24.7367 18.2351 22.478 21.7673 18.9658 24.7027V30.7605L20.9217 29.2717C26.4383 25.0704 29.896 19.6396 29.9262 12.5813V10.8936L25.0758 13.6843Z" fill="#B3C0C8"/>\r
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0022 23.0033C20.8786 20.5199 22.7921 17.5845 23.1373 13.757L18.0022 11.4243L12.8672 13.757C13.2184 17.5785 15.1319 20.5199 18.0022 23.0033Z" fill="#B3C0C8"/>\r
+    </g>\r
+    <defs>\r
+        <filter id="filter0_d_20517_17668" x="0" y="0" width="36" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">\r
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>\r
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>\r
+            <feOffset dy="2"/>\r
+            <feGaussianBlur stdDeviation="2"/>\r
+            <feComposite in2="hardAlpha" operator="out"/>\r
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0210412 0 0 0 0 0.0918726 0 0 0 0 0.185588 0 0 0 0.3 0"/>\r
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20517_17668"/>\r
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20517_17668" result="shape"/>\r
+        </filter>\r
+    </defs>\r
+</svg>\r
+</div>
+        <div class="settings-manager-icon js-active-ad-blocking-icon"><svg width="36" height="40" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">\r
+    <g filter="url(#filter0_d_20517_19152)">\r
+        <path opacity="0.8" d="M18.4132 2.18752C18.1506 2.06835 17.8494 2.06835 17.5868 2.18752L4.58677 8.08669C4.22947 8.24883 4 8.60495 4 8.99732V11.647C4 19.0526 7.45582 26.0254 13.3267 30.4656L17.3968 33.5438C17.7536 33.8137 18.2464 33.8137 18.6032 33.5438L22.6733 30.4656C28.5442 26.0254 32 19.0526 32 11.647V8.99732C32 8.60495 31.7705 8.24883 31.4132 8.08669L18.4132 2.18752Z" fill="white"/>\r
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0468 30.7605V24.7027C13.5346 21.7613 11.2759 18.2291 10.9368 13.6843L6.07422 10.8936V12.5813C6.11661 19.6456 9.56823 25.0704 15.0848 29.2717L17.0407 30.7605H17.0468Z" fill="#005DD8"/>\r
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9614 12.0691L18.0048 9.3205L24.0542 12.0691L29.165 9.13365L18.0048 4.06445L6.85059 9.13365L11.9614 12.0691Z" fill="#005DD8"/>\r
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.0758 13.6843C24.7367 18.2351 22.478 21.7673 18.9658 24.7027V30.7605L20.9217 29.2717C26.4383 25.0704 29.896 19.6396 29.9262 12.5813V10.8936L25.0758 13.6843Z" fill="#005DD8"/>\r
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0022 23.0033C20.8786 20.5199 22.7921 17.5845 23.1373 13.757L18.0022 11.4243L12.8672 13.757C13.2184 17.5785 15.1319 20.5199 18.0022 23.0033Z" fill="#1B86FA"/>\r
+    </g>\r
+    <defs>\r
+        <filter id="filter0_d_20517_19152" x="0" y="0" width="36" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">\r
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>\r
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>\r
+            <feOffset dy="2"/>\r
+            <feGaussianBlur stdDeviation="2"/>\r
+            <feComposite in2="hardAlpha" operator="out"/>\r
+            <feColorMatrix type="matrix" values="0 0 0 0 0.0210412 0 0 0 0 0.0918726 0 0 0 0 0.185588 0 0 0 0.3 0"/>\r
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_20517_19152"/>\r
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_20517_19152" result="shape"/>\r
+        </filter>\r
+    </defs>\r
+</svg>\r
+</div>
+        <!-- <div class="settings-manager-counter"></div> -->
+    </button>
+`,Q=`<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">\r
+    <circle cx="9" cy="9" r="7" stroke="#7B8998"/>\r
+    <circle cx="9" cy="12.75" r="0.75" transform="rotate(180 9 12.75)" fill="#7B8998"/>\r
+    <path d="M6.75 7.125C6.75 5.88236 7.75736 4.875 9 4.875C10.2426 4.875 11.25 5.88236 11.25 7.125C11.25 7.70755 11.0286 8.2384 10.6654 8.63798C9.96882 9.40424 9 10.2145 9 11.25V11.25" stroke="#7B8998"/>\r
+</svg>`,qt=i=>`
+    <div class="settings-manager-page settings-manager-settings-page">
+        <div class="settings-manager__logo">${X}</div>
+        <div class="settings-manager__content">
+            <div class="settings-manager__content-item settings-manager__content-item-back">
+                <div class="settings-manager__content-item-back__wrapper settings-manager__settings-toggle">
+                  ${$}
+                  <span class="settings-manager__text">${i.backText}</span>
+                </div>
+            </div>   
+            <div class="settings-manager__content-item">
+                <div id="custom-select-box-position" class="custom-select-wrapper">
+                    <label for="position-select">
+                        <span class="settings-manager__text">${i.iconPositionText}</span>
+                    </label>
+                    <div class="custom-select">
+                        <div class="custom-select-box" tabindex="1">
+                            <span class="custom-select-box-active"></span>
+                            <div class="custom-select-box-arrow">${$}</div>
+                            <div class="custom-select-options icon-position">
+                                <div class="custom-select-option custom-select-option--active" data-value="bottom-right">${i.selectPositionBottomRightText}</div>
+                                <div class="custom-select-option" data-value="bottom-left">${i.selectPositionBottomLeftText}</div>
+                                <div class="custom-select-option" data-value="top-right">${i.selectPositionTopRightText}</div>
+                                <div class="custom-select-option" data-value="top-left">${i.selectPositionTopLeftText}</div>
+                               <div class="custom-select-option" data-value="custom">${i.selectPositionCustomText}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-manager__content-item">
+                <label class="switch__container">
+                    <label class="settings-manager__text" for="toggle-lock-position">${i.lockPositionText}</label>
+                    <input id="toggle-lock-position" type="checkbox" class="switch__checkbox">
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+             <div class="settings-manager__content-item">
+                <label class="switch__container" for="toggle-auto-hide">
+                    <div class="tooltip__container">
+                        <label class="settings-manager__text" for="toggle-auto-hide">${i.iconAutoHideText}</label>
+                        <div class="${A}">
+                            ${Q}
+                            <div  class="tooltip__container-text _toggle-auto-hide">${i.settingsTooltipText}</div>
+                        </div>
+                    </div>
+                    <input id="toggle-auto-hide" type="checkbox" class="switch__checkbox">
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+        <div class="settings-manager__content-item">
+                <label class="switch__container">
+                    <label class="settings-manager__text" for="toggle-dont-show">${i.dontShowIconText}</label>
+                    <input id="toggle-dont-show" type="checkbox" class="switch__checkbox">
+                    <span class="switch__slider"></span>
+                </label>
+            </div>
+         <div class="settings-manager__content-item">
+                <label class="switch__container" for="toggle-dont-show-all-domains">
+                    <div class="tooltip__container">
+                        <label class="settings-manager__text" for="toggle-dont-show-all-domains">${i.dontShowAllDomainsIconText}</label>
+                        <div class="${A}">
+                            ${Q}
+                            <div class="tooltip__container-text _toggle-dont-show-all-domains">${i.dontShowAllDomainsIconTooltipText}</div>
+                        </div>
+                    </div>
+                    <input id="toggle-dont-show-all-domains" type="checkbox" class="switch__checkbox">
+                    <span class="switch__slider"></span>
+                </label>
+            </div>    
+        </div>    
+    </div>
+`;class Wt{constructor(t,e){o(this,"shadowRoot");o(this,"wrapper",null);o(this,"toggleButton",null);o(this,"mainPage",null);o(this,"settingsPage",null);o(this,"toggleEnabled",null);o(this,"toggleLockPosition",null);o(this,"toggleAutoHide",null);o(this,"toggleAdblockManager",null);o(this,"toggleDontShow",null);o(this,"reportAdsButton",null);o(this,"howItWorksButton",null);o(this,"settingsButtons",null);o(this,"iconPositionSelect",null);this.shadowRoot=t.attachShadow({mode:"closed"}),this.createAndAppendWrapper(e.language),this.getActiveElements()}createAndAppendWrapper(t){var n;const e=W[t];this.wrapper=x("div",{classList:[b],html:jt+Ft(e)+qt(e)});const s=x("style",{html:Zt+Rt+zt+yt});(n=this.shadowRoot)==null||n.append(s,this.wrapper)}getActiveElements(){var t,e,s,n,a,c,d,p,u,m;this.toggleButton=(t=this.shadowRoot)==null?void 0:t.querySelector("#settings-manager-toggle-button"),this.mainPage=(e=this.shadowRoot)==null?void 0:e.querySelector(`.${et}`),this.howItWorksButton=this.mainPage.querySelector(`#${q}`),this.toggleEnabled=(s=this.shadowRoot)==null?void 0:s.querySelector("#toggle-enabled"),this.toggleLockPosition=(n=this.shadowRoot)==null?void 0:n.querySelector("#toggle-lock-position"),this.toggleAutoHide=(a=this.shadowRoot)==null?void 0:a.querySelector("#toggle-auto-hide"),this.toggleDontShow=(c=this.shadowRoot)==null?void 0:c.querySelector("#toggle-dont-show"),this.reportAdsButton=(d=this.shadowRoot)==null?void 0:d.querySelector("#report-add"),this.toggleAdblockManager=(p=this.shadowRoot)==null?void 0:p.querySelector("#toggle-dont-show-all-domains"),this.settingsButtons=(u=this.shadowRoot)==null?void 0:u.querySelectorAll(".settings-manager__settings-toggle"),this.settingsPage=(m=this.shadowRoot)==null?void 0:m.querySelector(".settings-manager-settings-page")}}const Ot=i=>`
+<article id="${z}" class="onboarding">
+  <header id="${j}"></header>
+  <h2 id="${N}" ></h2>
+  <p id="${F}">
+  </p>
+  <footer>
+    <button id="${M}" class="reset-button __skip">${i.skip}</button>
+    <button  id="${R}" class="reset-button __nextStep">${i.next}</button>
+  </footer>
+</article>
+`,Ut=`
+  .reset-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+  }
 
-  <main class="container">
-    <!-- Latest issue will be injected here by newsletter.js -->
-    <section id="latest" class="section">
-      <h2>Latest Issue</h2>
-      <div id="latest-issue" class="issue"></div>
+
+  .onboarding {
+    padding-top: 32px;
+    position: absolute;
+    z-index: 15;
+    font-family: Manrope, sans-serif;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px 0 ${Ht};
+    width: var(--step-width);
+    background: ${Et};
+    box-sizing: border-box;
+
+
+    &._step-1 {
+      --step-width: 350px;
+      bottom: 8px;
+      right: 91px;
+
+      &:after {
+        content: url("data:image/svg+xml,%3csvg%20width='43'%20height='116'%20viewBox='0%200%2043%20116'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0.333333%203C0.333333%204.47276%201.52724%205.66667%203%205.66667C4.47276%205.66667%205.66667%204.47276%205.66667%203C5.66667%201.52724%204.47276%200.333333%203%200.333333C1.52724%200.333333%200.333333%201.52724%200.333333%203ZM43%20113L38%20110.113V115.887L43%20113ZM21%2021H20.5V93H21H21.5V21H21ZM21%2093H20.5C20.5%20104.322%2029.6782%20113.5%2041%20113.5V113V112.5C30.2304%20112.5%2021.5%20103.77%2021.5%2093H21ZM3%203V3.5C12.665%203.5%2020.5%2011.335%2020.5%2021H21H21.5C21.5%2010.7827%2013.2173%202.5%203%202.5V3Z'%20fill='white'/%3e%3c/svg%3e");
+        position: absolute;
+        top: 49.4%;
+        right: -40px;
+      }
+    }
+
+    &._step-2 {
+      --step-width: 313px;
+      bottom: 62px;
+      right: 333px;
+
+      &:after {
+        content: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='49'%20height='70'%20viewBox='0%200%2049%2070'%20fill='none'%3e%3cpath%20d='M0.333333%2067.0002C0.333333%2068.4729%201.52724%2069.6668%203%2069.6668C4.47276%2069.6668%205.66667%2068.4729%205.66667%2067.0002C5.66667%2065.5274%204.47276%2064.3335%203%2064.3335C1.52724%2064.3335%200.333333%2065.5274%200.333333%2067.0002ZM49%203L44%200.113249V5.88675L49%203ZM3%2067.5002H5V66.5002H3V67.5002ZM25.5%2047.0002V23H24.5V47.0002H25.5ZM25.5%2023C25.5%2012.2305%2034.2304%203.5%2045%203.5V2.5C33.6782%202.5%2024.5%2011.6782%2024.5%2023H25.5ZM5%2067.5002C16.3218%2067.5002%2025.5%2058.322%2025.5%2047.0002H24.5C24.5%2057.7697%2015.7696%2066.5002%205%2066.5002V67.5002Z'%20fill='white'/%3e%3c/svg%3e");
+        position: absolute;
+        top: 23.4%;
+        right: -46px;
+      }
+    }
+
+    &._step-3 {
+      --step-width: 407px;
+      bottom: 22px;
+      right: 333px;
+
+      &:after {
+        content: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='49'%20height='46'%20viewBox='0%200%2049%2046'%20fill='none'%3e%3cpath%20d='M0.333333%2043C0.333333%2044.4728%201.52724%2045.6667%203%2045.6667C4.47276%2045.6667%205.66667%2044.4728%205.66667%2043C5.66667%2041.5272%204.47276%2040.3333%203%2040.3333C1.52724%2040.3333%200.333333%2041.5272%200.333333%2043ZM49%203L44%200.113249V5.88675L49%203ZM3%2043.5H5V42.5H3V43.5ZM25.5%2023C25.5%2012.2304%2034.2304%203.5%2045%203.5V2.5C33.6782%202.5%2024.5%2011.6782%2024.5%2023H25.5ZM5%2043.5C16.3218%2043.5%2025.5%2034.3218%2025.5%2023H24.5C24.5%2033.7696%2015.7696%2042.5%205%2042.5V43.5Z'%20fill='white'/%3e%3c/svg%3e");
+        position: absolute;
+        top: 38%;
+        right: -46px;
+      }
+    }
+
+    &._step-4 {
+      --step-width: 342px;
+      bottom: 98px;
+      right: 368px;
+
+      &:after {
+        content: url("data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='49'%20height='50'%20viewBox='0%200%2049%2050'%20fill='none'%3e%3cpath%20d='M0.333333%203C0.333333%204.47276%201.52724%205.66667%203%205.66667C4.47276%205.66667%205.66667%204.47276%205.66667%203C5.66667%201.52724%204.47276%200.333333%203%200.333333C1.52724%200.333333%200.333333%201.52724%200.333333%203ZM49%2047L44%2044.1132V49.8868L49%2047ZM3%203.5H5V2.5H3V3.5ZM24.5%2023V27H25.5V23H24.5ZM24.5%2027C24.5%2038.3218%2033.6782%2047.5%2045%2047.5V46.5C34.2304%2046.5%2025.5%2037.7696%2025.5%2027H24.5ZM5%203.5C15.7696%203.5%2024.5%2012.2304%2024.5%2023H25.5C25.5%2011.6782%2016.3218%202.5%205%202.5V3.5Z'%20fill='white'/%3e%3c/svg%3e");
+        position: absolute;
+        top: 53.5%;
+        right: -46px;
+      }
+    }
+
+    & > header {
+      color: ${G};
+      font-size: 12px;
+      line-height: 16px;
+      padding: 0 32px;
+    }
+
+    & > h2 {
+      color: ${v};
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 22px;
+      margin-top: 3px;
+      padding: 0 32px;
+    }
+
+    & > p {
+      margin-top: 17px;
+      color: ${G};
+      font-family: Inter, sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 0 32px;
+
+      & > span {
+        font: inherit;
+        color: inherit;
+        margin-top: 20px;
+        display: inline-block;
+      }
+    }
+
+    & > footer {
+      background: ${Pt};
+      display: flex;
+      padding: 16px 32px;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+      margin-top: 24px;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+
+    }
+
+    & .__skip {
+      color: ${f};
+    }
+
+    & .__nextStep {
+      color: ${$t};
+      background: ${f};
+      padding: 0 12px;
+      height: 40px;
+      border-radius: 8px;
+      min-width: 87px;
+    }
+  }
+`,Yt=`
+    .onboardingWrapper:before {
+        content: '';
+        display: block;
+        position: fixed;
+        z-index: 10;
+        inset: 0;
+        background: ${Tt};
+    }
+    .settings-manager-wrapper[class*="_step-"] {
+        .settings-manager-icon   {
+            z-index: 15;
+        }
+      .js-active-ad-blocking-icon{
+        display: block!important;
+      }
+      
+      .js-disabled-ad-blocking-icon {
+        display: none!important;
+      }
+      
+      .settings-manager__content-item {
+        pointer-events: none;
+      }
+    }
+    
+    .settings-manager-wrapper:has(._step-1) {
+      .settings-manager-icon > svg {
+          stroke-width: 0.5px;
+          stroke: ${f};
+      }
+    }  
+    
+    .settings-manager-wrapper:has(._step-2) {
+        .settings-manager__content-item:first-child {
+            z-index: 15;
+            background: ${B};
+            filter: drop-shadow(0px 0px 12px  ${f});
+        }
+    }  
+    .settings-manager-wrapper:has(._step-3) {
+        .settings-manager__content-item:nth-child(2) {
+            z-index: 15;
+            background: ${B};
+            filter: drop-shadow(0px 0px 12px  ${f});
+        }
+    }   
+    .settings-manager-wrapper:has(._step-4) {
+        .settings-manager-settings-page {
+            z-index: 15;
+            box-shadow: 0 0 12px 2px ${f};
+        }
+    }
+
+`;class P{constructor({initialState:t,onSetState:e,language:s,settingsManagerUi:n}){o(this,"state",l.Finish);o(this,"onSetState");o(this,"steps");o(this,"maxSteps",4);o(this,"html");o(this,"styles");o(this,"settingsManagerUi");this.state=t,this.onSetState=e,this.settingsManagerUi=n,this.steps=O[s].steps,this.html=x("div",{html:Ot(O[s].base),classList:["onboardingWrapper"]}),this.styles=x("style",{html:Ut+Yt}),this.start()}dispatchOnboarding({start:t}){var s;const e=new CustomEvent("onboarding",{detail:{start:t}});(s=this.settingsManagerUi.wrapper)==null||s.dispatchEvent(e)}static createInstance(t){const{initialState:e}=t;if(e!==l.Empty&&e!==l.First)return;const s=new P(t);if(e===l.Empty){s.inject();return}s.restartListener()}inject(){var t;this.setState(l.First),this.updateUI(),(t=this.settingsManagerUi.wrapper)==null||t.append(this.styles,this.html),this.dispatchOnboarding({start:!0})}restartListener(){const t=this.settingsManagerUi.howItWorksButton;t&&(t.classList.remove("hidden"),t.addEventListener("click",()=>{var e;(e=this.settingsManagerUi.mainPage)==null||e.classList.remove("active"),this.inject(),t.classList.add("hidden")}))}start(){const t=this.html.querySelector(`#${R}`),e=this.html.querySelector(`#${M}`);t.addEventListener("click",()=>{var s;if(this.setState(`${Number(this.state)+1}`),this.updateUI(),Number(this.state)===this.maxSteps){const n=(s=this.steps[this.maxSteps-1])==null?void 0:s.button;n&&(t.textContent=n)}}),e.addEventListener("click",()=>{this.restartListener(),this.destroy()})}setState(t){var s,n;const e=Number(t)>this.maxSteps;if(t===l.Four&&((n=(s=this.settingsManagerUi.wrapper)==null?void 0:s.querySelector(`#${M}`))==null||n.classList.add("disable")),this.onSetState(t,e),e){this.destroy(),this.state=l.Finish;return}this.state=t}updateUI(){this.updateStepContent(),this.modifyClasses(),this.handlePageStates()}updateStepContent(){const t=this.steps.find(a=>a.id===this.state);if(!t)return;const e=this.html.querySelector(`#${N}`),s=this.html.querySelector(`#${j}`),n=this.html.querySelector(`#${F}`);s.textContent=t.step,e.textContent=t.title,n.innerHTML=t.description}modifyClasses(){var n,a;const t=(n=this.settingsManagerUi.wrapper)==null?void 0:n.classList,e=(a=this.html.querySelector(`#${z}`))==null?void 0:a.classList;if(!t||!e)return;this.clearModifierClasses(t),this.clearModifierClasses(e);const s=S+this.state;t.add(s),e.add(s)}clearModifierClasses(t){this.filterModifierClasses(t).forEach(e=>t.remove(e))}filterModifierClasses(t){return Array.from(t).filter(e=>e.startsWith(S))}handlePageStates(){const{mainPage:t,settingsPage:e}=this.settingsManagerUi;switch(this.state){case l.Second:case l.Third:t==null||t.classList.add("active");break;case l.Four:t==null||t.classList.remove("active"),e==null||e.classList.add("active");break}}destroy(){this.dispatchOnboarding({start:!1}),this.html.remove(),this.styles.remove();const{wrapper:t,mainPage:e,settingsPage:s}=this.settingsManagerUi;t==null||t.classList.remove(S+this.maxSteps),e==null||e.classList.remove("active"),s==null||s.classList.remove("active")}}class J extends HTMLElement{constructor(){super();o(this,"ui");o(this,"state");o(this,"listeners");o(this,"domContentLoadHandler",async()=>{var e;await this.getDomainDataAndUpdateState(),!this.state.isDomainDontShow&&(mt(),this.style=Vt,this.listeners.updateIconPosition(this.state.iconPosition),this.listeners.initializeToggleButtonListeners(),this.updateUIFromState(),this.listeners.addSelectListeners(),this.startOnboarding(),(e=this.listeners.dragAndDrop)==null||e.checkConstraints(),this.ui.toggleButton.style.opacity="1")});o(this,"updateUIFromState",()=>{this.ui.toggleEnabled.checked=!this.state.isWhitelistedDomains,this.ui.toggleLockPosition.checked=this.state.isPositionLock,this.ui.toggleAutoHide.checked=this.state.isManagerAutohideEnabled,this.ui.reportAdsButton.disabled=this.state.isDomainReported;const{x:e,y:s}=this.state.customPosition;if(this.state.iconPosition===h.Custom&&e&&s&&(this.ui.wrapper.style.left=`${e}px`,this.ui.wrapper.style.top=`${s}px`,U(this.ui.wrapper)),this.ui.toggleButton.classList.toggle("active",!this.state.isWhitelistedDomains),this.state.isManagerAutohideEnabled){const n=this.state.updateIntervalId(this.listeners.destroyCallback);this.listeners.initOnboardingEvent(n)}});this.state=new Lt,this.ui=new Wt(this,this.state),this.listeners=new _t(this.ui,this.state),this.execWhenDomReady(this.domContentLoadHandler)}execWhenDomReady(e){document.readyState==="loading"?document.addEventListener("DOMContentLoaded",e):e()}async getDomainDataAndUpdateState(){try{const e=await C.getDomainData(this.state.hostname);this.state.update(e)}catch(e){console.log("Error get domain data",e)}}startOnboarding(){const e=(s,n)=>{s!==l.First&&!n||(s===l.First&&this.listeners.updateIconPosition(h.BottomRight),this.state.update({onboardingStep:n?l.Finish:s}),_(this.state).catch(console.error))};P.createInstance({initialState:this.state.onboardingStep,onSetState:e,language:this.state.language,settingsManagerUi:this.ui})}}const T="wait-a360-companion-status",Gt="send-a360-companion-status",Xt=()=>new Promise(i=>{const t=()=>{clearTimeout(e),window.removeEventListener(T,t),i(!0)};window.addEventListener(T,t),window.dispatchEvent(new CustomEvent(Gt));const e=setTimeout(()=>{window.removeEventListener(T,t),i(!1)},100)});async function Qt(){var t;await Xt()||(customElements.define(H,J),document.body.appendChild(new J),(t=document.querySelector(`#${at}`))==null||t.remove())}Qt().catch(i=>console.error("Manager initialization error:",i))})();
+
+})();</script>
+  <!-- Hero section introducing the newsletter -->
+  <div class="hero">
+    <h1>Our Newsletter</h1>
+    <p>Get the latest product updates, insights and news delivered to your inbox.</p>
+    <!-- CTA button links down to the subscribe form -->
+    <a class="cta-button">Subscribe for Manager Success Tips</a>
+  </div>
+  <!-- Main content container with a white background -->
+  <div class="main">
+    <!-- Subscribe section -->
+    <section id="subscribe" class="card">
+      <h2>Subscribe Now 👇</h2>
+      <!-- Replace the # symbol below with your mailing list provider’s form action -->
+      <form action="#" method="post">
+        <input type="email" placeholder="you@example.com" required />
+        <button type="submit" class="btn">Subscribe</button>
+      </form>
+      <p class="muted">You’ll stay ahead with every new release of strategies and tips!</p>
     </section>
+<!-- Latest issue section -->
+<section class="latest">
+  <h2>Latest Issue</h2>
+  <div class="card">
+      <p class="muted">Stay tuned for our first newsletter issue.</p>
+  </div>
+</section>
 
-    <!-- Archive list for previous issues -->
-    <section id="archive" class="section">
-      <h2>Archive</h2>
-      <ul id="archive-list" class="archive-list"></ul>
-    </section>
+<!-- Archive list section -->
+<section class="archive">
+  <h2>Archive</h2>
+  <div class="card">
+     <p class="muted">Read our previous issues</p>
+  </div>
+</section>
 
-    <!-- Subscribe section with link to the RSS feed -->
-    <section id="subscribe" class="section">
-      <h2>Subscribe</h2>
-      <p>You can subscribe via our RSS feed to receive updates as soon as we publish new issues.</p>
-      <a id="rss-link" href="newsletter/rss.xml" class="button">RSS Feed</a>
-    </section>
-  </main>
-
-  <!-- Client-side JavaScript that fetches newsletter entries from Sanity -->
+  </div>
+  <!-- Dynamic newsletter loader -->
   <script src="newsletter.js"></script>
 </body>
 </html>

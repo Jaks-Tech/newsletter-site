@@ -1,113 +1,138 @@
 /*
- * Styling for the static newsletter page.
- * A simple layout with a gradient hero, clean typography and minimal colours.
- */
+  Stylesheet for the Paceflow newsletter page.  It uses the colour palette from
+  Paceflow’s existing marketing site, including the purple–pink gradient and
+  gentle greys.  Adjust spacing and colours here to customise the look of your
+  newsletter page without touching the HTML structure.
+*/
 
-/* Reset some defaults */
-* {
-  box-sizing: border-box;
+/* Base page styling */
+body {
   margin: 0;
   padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* The page background is white; gradient is applied only to the hero section */
+  background: #ffffff;
+  color: #222;
 }
 
-body {
-  font-family: sans-serif;
-  line-height: 1.6;
+/* Main content container */
+.main {
+  max-width: 800px;
+  margin: -40px auto 0 auto;
+  background: #ffffff;
   color: #333;
-  background: #f7f9fc;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 40px 20px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
 }
 
-/* Hero section with a soft gradient */
+/* Hero section */
 .hero {
-  background: linear-gradient(135deg, #6b73ff 0%, #000dff 74%);
-  color: white;
-  padding: 4rem 1rem;
+  text-align: center;
+  padding: 80px 20px;
+  color: #fff;
+  /* Apply the diagonal gradient only to the top portion of the page */
+  background: linear-gradient(135deg, #2f3ff0 0%, #563e66 100%);
+  min-height: 20vh;
+}
+.hero h1 {
+  font-size: 2.6rem;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin: 0 auto 30px auto;
+  max-width: 650px;
+}
+.cta-button {
+  display: inline-block;
+  background: #ffffff;
+  color: #6672ff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+.cta-button:hover {
+  background: #f3f3f3;
+}
+
+/* Headings */
+h1 {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  /* Center the main heading */
   text-align: center;
 }
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+h2, h3 {
+  color: #6672ff;
+  /* Center subheadings */
+  text-align: center;
+  font-size: 0.95rem;
 }
 
-.hero .tagline {
-  font-size: 1.2rem;
-  opacity: 0.9;
+/* Muted helper text */
+.muted {
+  color: #666;
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Container wraps the main content sections */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-/* Shared section styling */
-.section {
-  margin-bottom: 3rem;
-}
-
-.section h2 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  color: #111;
-}
-
-/* Latest issue card */
-#latest-issue {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Card layout for subscribe and newsletter items */
+.card {
+  background-color: #ffffff;
+  border: 1px solid rgba(102, 114, 255, 0.2);
+  border-radius: 20px;
   padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
 }
 
-#latest-issue h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.4rem;
+/* Latest section spacing */
+.latest {
+  margin-bottom: 2rem;
 }
 
-#latest-issue p {
-  margin-bottom: 0.5rem;
+/* Archive list items */
+.archive-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
 }
 
-#latest-issue a {
-  color: #000dff;
-  text-decoration: none;
-}
-
-/* Archive list styling */
-.archive-list {
-  list-style: none;
-}
-
-.archive-list li {
-  margin-bottom: 0.75rem;
-}
-
-.archive-list a {
-  color: #000dff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.archive-list .date {
-  color: #555;
-  font-size: 0.85rem;
-  margin-left: 0.5rem;
-}
-
-/* Subscribe section styling */
-#subscribe .button {
+/* Primary button styling */
+.btn {
   display: inline-block;
-  margin-top: 0.75rem;
-  background: #000dff;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 30px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  background: #ffffff;
+  color: #6672ff;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #f3f3f3;
 }
 
-#subscribe .button:hover {
-  background: #6b73ff;
+/* Form layout */
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+input[type="email"] {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
 }
