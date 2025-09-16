@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Newsletter Feed</title>
+    <link>https://example.com/newsletter</link>
+    <description>RSS feed for the newsletter. This file is automatically updated by the generate-rss.js script.</description>
+  </channel>
+</rss>
